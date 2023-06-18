@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout
+    title='Sobre Nosotros'
+    description='Somos los mejores'
+>
+    <h2 class="text-4xl m-11 text-red-400">Sobre nosotros</h2>
+
+    <botton class='bt m-11'> Enviar</botton>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim atque harum, facilis ipsum facere odit similique ipsam. Temporibus quisquam repellendus harum explicabo consectetur reiciendis velit! Nemo deserunt eligendi sed, ab ipsa autem excepturi ut distinctio. Debitis quia non eum aspernatur ea officia nam, asperiores sed minus nesciunt, a quaerat veritatis!</p>
+</Layout>
+
+<style>
+    .bt {
+        background: orange;
+        cursor: pointer;
+        border: none;
+        padding: 16px 32px;
+        color: #fff;
+        font-size: 23px;
+        font-weight: bold;
+        position: relative;
+        border-radius: 12px;
+        opacity: 1;
+        border: solid 1px white;
+    }
+    .bt:hover {
+        /* background-color: orange; */
+        opacity: 0.2;
+        transition: opacity 0.5s;
+        /* transition: background-color 2s; */
+    }
+
+    .bt:active {
+        transition: 0.1s;
+        opacity: 1;
+        background-color: orange;
+        filter: brightness(1.1);
+
+    }
+
+    .bt::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            45deg,
+            red,
+            blue,
+            deeppink,
+            blue,
+            red,
+            blue,
+            deeppink,
+            blue
+        );
+        background-size: 800%;
+        border-radius: 10px;
+        filter: blur(8px);
+        animation: glowing 22s linear infinite;
+    }
+
+    .bt:active::before {
+        animation: glowing 0.1s;
+    }
+
+    @keyframes glowing {
+        0% {
+            background-position: 0 0;
+        }
+        50% {
+            background-position: 400% 0;
+        }
+        100% {
+            background-position: 0 0;
+        }
+    }
+</style>

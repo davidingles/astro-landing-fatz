@@ -1,0 +1,15 @@
+---
+import Fea from '../../data/feature.json'
+---
+
+<h1 class="text-center font-bold text-5xl mt-10">
+    Features
+</h1>
+<div class="p-2 m-2 grid md:grid-cols-3 gap-4">
+    { Fea.map( feature => (
+        <div class="bg-blue-900 p-2 rounded-md">
+            <h2 class="text-orange-400 text-[1.5rem]">{feature.title}</h2>
+            <p class="text-zinc-400">{feature.description}</p>
+        </div>
+    ))}
+</div>

@@ -4,7 +4,7 @@ export interface Props {
 	description?: string;
 }
 
-const { title, description } = Astro.props;
+const { title = 'Auxiliar Manipuladora', description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,7 +18,9 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<main class="mx-auto container bg-[#292929] text-white md:p-10">
+			<slot />
+		</main>
 	</body>
 </html>
 <style is:global>

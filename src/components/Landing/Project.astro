@@ -1,0 +1,28 @@
+---
+import { Proyecto } from '../../data/Project.json'
+---
+
+<section>
+    <h1 class='text-[2rem] text-bold text-zinc-400'>Projects</h1>
+    <div class='flex-column md:flex'>
+        {
+            // Proyecto.map( pro => (
+            //     <div>{pro.title}</div>
+            // ))
+            Proyecto.map((pro) => (
+                <article class='grid grid-cols-1 bg-zinc-700 m-2 rounded-[1rem]'>
+                    <div class='flex flex-col text-center p-2'>
+                        <div class='text-[1rem] text-orange-700 bg-blend-multiply'>
+                            {pro.title}
+                        </div>
+                        <p>{pro.description}</p>
+                        <img
+                            src={pro.imagen}
+                            class='w-32 self-center'
+                        />
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>
