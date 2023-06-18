@@ -1,0 +1,70 @@
+---
+import david from './images/david.jpg'
+import fox from './images/fox.png'
+---
+
+
+<article>
+    <img src={david} alt="">
+    <img src={fox} alt="">
+</article>
+
+<style>
+    article{
+        position: relative;
+        width: 333px;
+        transition: all .3s ease;
+        /* border: solid 2px red; */
+    }
+
+    article img:first-child{
+        object-fit: cover;
+        width: 100%;
+        box-shadow: 1px 1px 5px 0px rgba(0,0,0,.5);
+        border-radius: 1rem;
+    }
+
+    article img:last-child{
+        position: absolute;
+        width: 222px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transform: translateY(33%);
+        opacity: 0;
+        transition: all .3s ease;
+    }
+
+    article:hover{
+        transform: perspective(222px) rotateX(10deg) translateY(-16%) translateZ(0);
+    }
+
+    article:hover img:last-child{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+    article::before{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 1rem;
+        box-shadow: 1px 22px 22px -15px rgba(0,0,0,.5);
+        background-image: linear-gradient(
+            to bottom,
+            transparent 10%,
+            rgba(255,255,255,.5) 50%,
+            rgba(255,255,255)95%
+        );
+        opacity: 0;
+        transition: all .3s ease;
+    }
+    article:hover::before{
+        opacity: 1;
+    }
+
+
+</style>
